@@ -1,0 +1,106 @@
+﻿<Window x:Class="AntiYandex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Анти-Яндекс Утилита" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized"
+        MinWidth="400" MinHeight="300">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/YandexBlocker.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+             <!-- Иконки-ссылки в левом верхнем углу -->
+                <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Margin="110,0,0,50">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="48"/>
+                    <Setter Property="Height" Value="48"/>
+                    <Setter Property="Margin" Value="0,0,20,0"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button x:Name="TrafficLightButton" Click="TrafficLightButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="Assets/vpn.png" Stretch="Uniform" Width="40" Height="40"/>
+            </Button>
+
+            <Button x:Name="DonateButton" Click="DonateButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="Assets/support.png" Stretch="Uniform" Width="40" Height="40"/>
+            </Button>
+
+            <Button x:Name="GitHubButton" Click="GitHubButton_Click" Margin="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="Assets/github.png" Stretch="Uniform" Width="45" Height="45"/>
+            </Button>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="BlockButton" Click="BlockButton_Click" Content="ЗАБЛОКИРОВАТЬ" 
+                    FontFamily="pack://application:,,,/Assets/Fonts/#Outfit"
+                    FontWeight="Black"
+                    FontSize="50" Foreground="White" Background="#E94224" 
+                    Width="500" Height="150"
+                    Cursor="Hand" BorderThickness="2" BorderBrush="White">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="75">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="UnblockButton" Click="UnblockButton_Click" Content="РАЗБЛОКИРОВАТЬ" 
+                    FontFamily="pack://application:,,,/Assets/Fonts/#Outfit"
+                    FontWeight="Black"
+                    FontSize="18" Foreground="White" Background="#2E9E4A" 
+                    Width="200" Height="50"
+                    Cursor="Hand" BorderThickness="2" BorderBrush="White"
+                    Margin="0,20,0,0"
+                    Opacity="0.2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="25">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock x:Name="StatusLabel" Text="Жми на кнопку, заебал!" FontSize="14" 
+                       Foreground="White" FontWeight="SemiBold" 
+                       HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
