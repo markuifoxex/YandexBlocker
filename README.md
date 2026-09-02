@@ -1,6 +1,4 @@
-
-
-https://github.com/user-attachments/assets/8c0e7d26-4d0a-49b0-87b8-45ea13b99e5b
+<img width="2555" height="1343" alt="Screenshot 2026-09-02 194900" src="https://github.com/user-attachments/assets/9e8ec787-a61c-408f-9b7a-080d8b90f8d4" />
 
 
 
